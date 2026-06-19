@@ -1,0 +1,7 @@
+AiAgentEnv/
+.env
+__pycache__/
+.idea/
+*.pyc
+venv/
+AiAgentEnv

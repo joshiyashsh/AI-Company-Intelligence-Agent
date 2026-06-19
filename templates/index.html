@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Company Intelligence Agent</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>AI Company Intelligence Agent</h1>
+
+    <form method="POST" id="reportForm">
+
+        <input
+            type="text"
+            name="company"
+            placeholder="Enter Company Name"
+            required>
+
+        <button type="submit">
+            Generate Report
+        </button>
+
+    </form>
+
+    <div id="loader" class="loader-container" style="display:none;">
+
+        <div class="spinner"></div>
+
+        <h3>Generating Company Intelligence Report</h3>
+
+        <p id="loadingText">
+            Collecting company information...
+        </p>
+
+    </div>
+
+    {% if report %}
+
+    <div class="report-wrapper">
+
+        <div class="download-section">
+            <button onclick="window.print()">
+                Download Report
+            </button>
+        </div>
+
+        <div class="report-header">
+            <h2>Company Intelligence Report</h2>
+            <p>{{ company }}</p>
+        </div>
+
+        <div class="markdown-content">
+            {{ report|safe }}
+        </div>
+
+    </div>
+    {% endif %}
+
+</div>
+
+<script>
+
+document.getElementById("reportForm").addEventListener("submit", function() {
+
+    document.getElementById("loader").style.display = "block";
+
+    const reportContainer = document.querySelector(".report-wrapper");
+
+    if(reportContainer){
+        reportContainer.style.display = "none";
+    }
+
+    const messages = [
+        "Collecting company information...",
+        "Analyzing business operations...",
+        "Identifying business challenges...",
+        "Evaluating AI opportunities...",
+        "Preparing executive recommendations..."
+    ];
+
+    let index = 0;
+
+    const loadingText = document.getElementById("loadingText");
+
+    const interval = setInterval(() => {
+
+        if(index < messages.length - 1){
+            index++;
+            loadingText.innerText = messages[index];
+        } else {
+            clearInterval(interval);
+        }
+
+    }, 4000);
+
+});
+
+</script>
+
+</body>
+</html>
