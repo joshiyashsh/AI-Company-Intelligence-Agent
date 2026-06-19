@@ -228,17 +228,9 @@ A walkthrough demonstrating:
   
 ---
 
-## Deployment
-
-The application is deployed on Render.
-
-### Live Application
-
-[AI Company Agent](https://ai-company-agent-jxc5.onrender.com)
-
 ### GitHub Repository
 
-[GitHub Repository](https://github.com/harshitasurana/AI-Company-Agent)
+[GitHub Repository](https://github.com//AI-Company-Agent)
 
 ---
 
