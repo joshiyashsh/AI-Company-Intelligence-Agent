@@ -230,7 +230,7 @@ A walkthrough demonstrating:
 
 ### GitHub Repository
 
-[GitHub Repository](https://github.com//AI-Company-Agent)
+[GitHub Repository](https://github.com/joshiyashsh/AI-Company-Intelligence-Agent)
 
 ---
 
